@@ -1,0 +1,15 @@
+p {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 30px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.ok {
+    color: green;
+}
+
+.ko {
+    color: red;
+}
