@@ -8,15 +8,20 @@
     <body>
 
         <?php
-            $password = $_GET['password'];
-            if ($password == 'boolean') {
-                echo '<p class="ok">La password è corretta</p>';
-            } elseif ($password == '') {
-                echo '<p>Inserisci la password</p>';
+            if (empty($_GET['password'])) {
+                $output = 'Inserire password';
             } else {
-                echo '<p class="ko">La password è sbagliata</p>';
-            };
+                $password = $_GET['password'];
+                if ($password == 'boolean') {
+                    $class = 'ok';
+                    $output = 'Password Corretta';
+                } else {
+                    $class = 'ko';
+                    $output = 'Password Errata';
+                };
+            }
         ?>
 
+        <p class="<?php echo $class; ?>"><?php echo $output; ?></p>
     </body>
 </html>
